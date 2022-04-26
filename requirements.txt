@@ -1,0 +1,5 @@
+easyocr==1.4.1
+torch==1.11.0
+numpy==1.22.3
+streamlit==1.8.1
+#pip install opencv-python==4.5.4.60
