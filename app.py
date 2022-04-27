@@ -132,6 +132,24 @@ def main():
             result = reader.readtext(
                 np.array(input_image)
             )
+            out_str = " "
+            list_text = [ftext[1] for ftext in result]
+            st.title("Загрузка результата:")
+            # data = open(".txt", "w")
+            # data.write(out_str.join(list_text))
+ 
+            # result_data = open(".txt", "r")
+            # st.download_button('Скачать распознанный текст', result_data)
+            with open(".txt", 'w') as file:
+                file.write(out_str.join(list_text))
+            result_file = open(".txt", 'r')
+            st.download_button('Скачать распознанный текст', result_file)
+
+            st.title("Распознанное изображение в виде текста:")
+
+  
+            futext = st.write(out_str.join(list_text))
+            st.title("Распознанное изображение в списка:")
             result_text = [text[1] for text in result]
             st.write(result_text)
     else:
