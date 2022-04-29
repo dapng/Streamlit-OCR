@@ -1,2 +1,5 @@
 *.pth
+*.zip
 Pipfile
+Procfile
+Dockerfile

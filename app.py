@@ -1,5 +1,7 @@
+import sys # System-specific parameters and functions
 import easyocr as ocr  # OCR
 import streamlit as st  # web app
+from streamlit import cli as stcli # cli web app
 from PIL import Image  # opening images
 import numpy as np  # for array conversions
 
@@ -135,11 +137,6 @@ def main():
             out_str = " "
             list_text = [ftext[1] for ftext in result]
             st.title("Загрузка результата:")
-            # data = open(".txt", "w")
-            # data.write(out_str.join(list_text))
- 
-            # result_data = open(".txt", "r")
-            # st.download_button('Скачать распознанный текст', result_data)
             with open(".txt", 'w') as file:
                 file.write(out_str.join(list_text))
             result_file = open(".txt", 'r')
@@ -160,7 +157,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-
-# For local run)
-# streamlit run app.py
+    if st._is_running_with_streamlit:
+        main()
+    else:
+        sys.argv = ["streamlit", "run", sys.argv[0]]
+        sys.exit(stcli.main())
