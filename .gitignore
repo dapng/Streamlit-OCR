@@ -1,5 +1,6 @@
 *.pth
 *.zip
+*.json
 Pipfile
 Procfile
 Dockerfile
