@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "*.py",
+          "use": "@dapng/Streamlit-OCR"
+      }
+  ],
+  "routes": [
+      {
+          "src": "(.*)",
+          "dest": "app.py"
+      }
+  ]
+}
