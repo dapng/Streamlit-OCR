@@ -146,7 +146,7 @@ def main():
 
   
             futext = st.write(out_str.join(list_text))
-            st.title("Распознанное изображение в списка:")
+            st.title("Распознанное изображение в списке:")
             result_text = [text[1] for text in result]
             st.write(result_text)
     else:
